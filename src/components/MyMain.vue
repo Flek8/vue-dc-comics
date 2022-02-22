@@ -1,11 +1,6 @@
 <template>
   <main>
-      <div id="jumbotron">
-          <div id="content">
-              <h1>Content goes here</h1>
-          </div>
-      </div>
-
+      <MyJumbotron/>
       <div id="merchandise">
           <ul>
               <li v-for="(product, index) in products" :key="index">
@@ -18,30 +13,35 @@
 </template>
 
 <script>
+import MyJumbotron from './MyJumbotron.vue'
+
 export default {
   name: 'MyMain',
+  components: {
+      MyJumbotron
+  },
   data() {
       return {
           products: [
               {
                   text: 'DIGITAL COMICS',
-                  photo: '../assets/img/buy-comics-digital-comics.png'
+                  photo: require('../assets/img/buy-comics-digital-comics.png')
               },
               {
                   text: 'DC MERCHANDISE',
-                  photo: '../assets/img/buy-comics-merchandise.png'
+                  photo: require('../assets/img/buy-comics-merchandise.png')
               },
               {
                   text: 'SUBSCRIPTION',
-                  photo: '../assets/img/buy-comics-shop-locator.png'
+                  photo: require('../assets/img/buy-comics-subscriptions.png')
               },
               {
                   text: 'COMIC SHOP LOCATOR',
-                  photo: '../assets/img/buy-comics-subscriptions.png'
+                  photo: require('../assets/img/buy-comics-shop-locator.png')
               },
               {
                   text: 'DC POWER VISA',
-                  photo: '../assets/img/buy-dc-power-visa.svg'
+                  photo: require('../assets/img/buy-dc-power-visa.svg')
               }
           ]
         }
@@ -51,20 +51,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    #jumbotron {
-        background-color: black;
-        #content {
-            width: 70%;
-            margin: auto;
-            height: 100px;
-            line-height: 100px;
-            color: white;
-            vertical-align: middle;
-        }
-    }
-    #merchandise {
+    main {
         background-color: rgb(17, 100, 255);
-        height: 150px;
+    }
+    
+    #merchandise {
+        width: 70%;
+        margin: auto;
+        background-color: rgb(17, 100, 255);
+        padding: 30px 0;
 
         ul {
             height: 100%;
@@ -75,8 +70,17 @@ export default {
             li {
                 color: white;
                 list-style-type: none;
+                font-size: 10px;
+                display: flex;
+                align-items: center;
                 img {
-                    height: 30px;
+                    height: 50px;
+                    width: 50px;
+                    object-fit: contain;
+                    margin-right: 5px;
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
             }
         }

@@ -1,20 +1,32 @@
 <template>
+    
     <ul>
-        <li v-for="(element, index) in msg" :key="index">
+        <li>
             <a href="#">{{element.text}}</a>
         </li>
     </ul>
+    
 </template>
 
 <script>
 export default {
     name: 'MyList',
     props: {
-        msg: String
+        'element': Object,
+        'titolo': String
     }
 }
 </script>
 
 <style scoped lang="scss">
 
+    li {
+        list-style: none;
+        margin-left: 10px;
+        margin-top: 2px;
+    }
+    a {
+        text-decoration: none;
+        color: grey;
+    }
 </style>

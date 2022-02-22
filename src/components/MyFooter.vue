@@ -1,11 +1,62 @@
 <template>
-  <div>
-    <MyList msg="dcComics"/>
-  </div>
+  <footer>
+    <div class="footer-top">
+      <div class="list">
+        <h3>DC COMICS</h3>
+        <MyList 
+          v-for="(el, index) in dcComics"
+          :key="index"
+          :element='el'>
+        </MyList>
+      </div>
+
+      <div class="list">
+        <h3>SHOP</h3>
+        <MyList 
+          v-for="(el, index) in shop"
+          :key="index"
+          :element='el'>
+        </MyList>
+      </div>
+
+      <div class="list">
+        <h3>DC</h3>
+        <MyList 
+          v-for="(el, index) in dc"
+          :key="index"
+          :element='el'>
+        </MyList>
+      </div>
+      
+      <div class="list">
+        <h3>SITES</h3>
+        <MyList 
+          v-for="(el, index) in sites"
+          :key="index"
+          :element='el'>
+        </MyList>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="btn">SIGN-UP NOW!</div>
+      <div class="social">
+        <span>FOLLOW US</span>
+        <ul>
+          <li><img src="../assets/img/footer-facebook.png" alt=""></li>
+          <li><img src="../assets/img/footer-twitter.png" alt=""></li>
+          <li><img src="../assets/img/footer-youtube.png" alt=""></li>
+          <li><img src="../assets/img/footer-pinterest.png" alt=""></li>
+          <li><img src="../assets/img/footer-periscope.png" alt=""></li>
+        </ul>
+      </div>
+    </div>
+    
+  
+  </footer>
 </template>
 
 <script>
-import MyList from './MyList.vue'
+import MyList from './MyList.vue';
 
 export default {
   name: 'MyFooter',
@@ -104,5 +155,64 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  .footer-top {
+    background-image: url('../assets/img/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 15%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 350px;
+    align-content: flex-start;
+    
+    .list {
+      width: fit-content;
+    }
 
+    h3 {
+    color: white;
+    margin: 15px;
+    }
+  }
+
+  .footer-bottom {
+    padding: 20px 15%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(20, 20, 20);
+
+    .btn {
+      padding: 10px 10px 0 10px;
+      border: 1px solid rgb(17, 100, 255);
+      color: white;
+      font-weight: bold;
+      vertical-align: middle;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    
+    .social {
+      display: flex;
+      align-items: center;
+      color: rgb(17, 100, 255);
+      font-weight: bold;
+      
+      span {
+        margin-right: 10px;
+      }
+
+      li {
+        display: inline-block;
+        list-style: none;
+        margin: 0 5px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
 </style>

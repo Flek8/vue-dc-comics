@@ -3,7 +3,6 @@
     <MyHeader/>
     <MyMain/>
     <MyFooter/>
-    
   </div>
 </template>
 
