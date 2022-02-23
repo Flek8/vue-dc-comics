@@ -53,6 +53,8 @@ export default {
 <style scoped lang="scss">
     main {
         background-color: rgb(17, 100, 255);
+        position: relative;
+        z-index: 10;
     }
     
     #merchandise {
@@ -60,6 +62,7 @@ export default {
         margin: auto;
         background-color: rgb(17, 100, 255);
         padding: 30px 0;
+        
 
         ul {
             height: 100%;

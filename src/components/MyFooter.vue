@@ -36,6 +36,7 @@
           :element='el'>
         </MyList>
       </div>
+      <img src="../assets/img/dc-logo-bg.png">
     </div>
     <div class="footer-bottom">
       <div class="btn">SIGN-UP NOW!</div>
@@ -163,8 +164,16 @@ export default {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 350px;
+    height: 380px;
     align-content: flex-start;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translate(0,-50%);
+    }
     
     .list {
       width: fit-content;
@@ -178,16 +187,21 @@ export default {
 
   .footer-bottom {
     padding: 20px 15%;
+    height: 100px;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(20, 20, 20);
+    align-items: center;
+    background-color: rgb(39, 39, 39);
+    position: relative;
+    z-index: 10;
 
     .btn {
-      padding: 10px 10px 0 10px;
+      
+      padding: 10px;
       border: 1px solid rgb(17, 100, 255);
       color: white;
       font-weight: bold;
-      vertical-align: middle;
+      height: fit-content;
 
       &:hover {
         cursor: pointer;
